@@ -1410,76 +1410,7 @@
               "threats": []
             },
             "labels": [
-              {
-                "attrs": {
-                  "label": {
-                    "text": "2. Weiterleitung\nTelefonnummer"
-                  }
-                },
-                "position": {
-                  "distance": 0.6100815863762545,
-                  "offset": -21.27058463543483
-                }
-              }
-            ],
-            "id": "8ecaba74-0e1f-4520-834c-ddec29220d7e",
-            "source": {
-              "cell": "94f68ce7-aa88-45a4-ba41-c0b62d6a959c"
-            },
-            "target": {
-              "cell": "ebc88767-2bed-409f-b854-efadec206ba8"
-            },
-            "vertices": [
-              {
-                "x": 760,
-                "y": -10
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Telefonnummer, OTT",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              {
-                "attrs": {
-                  "label": {
-                    "text": "Antwort"
-                  }
-                },
-                "position": {
-                  "distance": 0.4667551402818713,
-                  "offset": -12.917577739081434
-                }
-              }
+              "Antwort"
             ],
             "id": "10939d18-1017-4b86-841d-9f5394f83f90",
             "source": {
@@ -1490,70 +1421,8 @@
             },
             "vertices": [
               {
-                "x": 770,
-                "y": 65
-              }
-            ]
-          },
-          {
-            "shape": "trust-broundary-curve",
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Boundary",
-              "name": "Externer Service für\nden Versand des OTT",
-              "description": "",
-              "isTrustBoundary": true,
-              "hasOpenThreats": false
-            },
-            "labels": [
-              {
-                "attrs": {
-                  "label": {
-                    "text": "Telefonanbieter"
-                  }
-                },
-                "position": {
-                  "distance": 0.1607609674711048,
-                  "offset": 15.4290577443574
-                }
-              }
-            ],
-            "id": "5d5f2170-50ee-404a-99f3-b55e2f657730",
-            "source": {
-              "x": 600,
-              "y": 599
-            },
-            "target": {
-              "x": 600,
-              "y": 600
-            },
-            "vertices": [
-              {
-                "x": 480,
-                "y": 619
-              },
-              {
-                "x": 410,
-                "y": 665
-              },
-              {
-                "x": 440,
-                "y": 754
-              },
-              {
-                "x": 705,
-                "y": 754
-              },
-              {
                 "x": 750,
-                "y": 626
-              },
-              {
-                "x": 680,
-                "y": 580
+                "y": 85
               }
             ]
           },
@@ -1732,7 +1601,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Weekly Report",
+              "name": "Weekly Report\nEncrypted/signed Email",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -1745,7 +1614,7 @@
               "threats": []
             },
             "labels": [
-              "Weekly Report"
+              "Weekly Report\nEncrypted/signed Email"
             ],
             "id": "bf01399c-f584-45a2-80cc-2c704a9a3cd8",
             "source": {
@@ -1811,6 +1680,118 @@
               {
                 "x": 450,
                 "y": 230
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "2. Weiterleitung\nTelefonnummer",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "2. Weiterleitung\nTelefonnummer"
+            ],
+            "id": "8ecaba74-0e1f-4520-834c-ddec29220d7e",
+            "source": {
+              "cell": "94f68ce7-aa88-45a4-ba41-c0b62d6a959c"
+            },
+            "target": {
+              "cell": "ebc88767-2bed-409f-b854-efadec206ba8",
+              "port": "3da3b78e-0bdf-4ba7-9ebc-73e35721803b"
+            },
+            "vertices": [
+              {
+                "x": 740,
+                "y": -7
+              },
+              {
+                "x": 840,
+                "y": -7
+              }
+            ]
+          },
+          {
+            "shape": "trust-broundary-curve",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Boundary",
+              "name": "Externer Service für\nden Versand des OTT",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            },
+            "labels": [
+              {
+                "attrs": {
+                  "label": {
+                    "text": "Telefonanbieter"
+                  }
+                },
+                "position": {
+                  "distance": 0.1607609674711048,
+                  "offset": 15.4290577443574
+                }
+              }
+            ],
+            "id": "5d5f2170-50ee-404a-99f3-b55e2f657730",
+            "source": {
+              "x": 600,
+              "y": 599
+            },
+            "target": {
+              "x": 600,
+              "y": 600
+            },
+            "vertices": [
+              {
+                "x": 480,
+                "y": 619
+              },
+              {
+                "x": 410,
+                "y": 665
+              },
+              {
+                "x": 440,
+                "y": 754
+              },
+              {
+                "x": 705,
+                "y": 754
+              },
+              {
+                "x": 750,
+                "y": 626
               }
             ]
           },
