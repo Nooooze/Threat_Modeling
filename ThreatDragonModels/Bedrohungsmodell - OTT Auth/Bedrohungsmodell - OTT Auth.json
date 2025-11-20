@@ -149,8 +149,8 @@
                 "text": "Login System -\nWebapp +\nMobile App"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -263,24 +263,24 @@
                 },
                 {
                   "id": "8e39013e-7616-497a-be16-4a9ece1a5b79",
-                  "title": "New STRIDE threat",
-                  "status": "Open",
-                  "severity": "TBD",
+                  "title": "Spoofing",
+                  "status": "Mitigated",
+                  "severity": "Low",
                   "type": "Spoofing",
-                  "description": "Ein Angreifer gibt sich als legitimer Nutzer aus.\n(OTT wird auf der SD-Karte gespeichert und ist 1 jahr gültig)\n\nAttack Vector :  Angreifer installiert Malware oder hat physischen Zugriff, liest OTT vom SD-Storage aus und verwendet es in seiner eigenen App/Session.\n\nCAPEC-151: attacker impersonating a legitimate identity by stealing or forging authentication credentials.\n\nMitre Tactic: TA0006 – Credential Access: The attacker attempts to obtain or misuse authentication information such as passwords, tokens, or keys.",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "description": "Ein Angreifer gibt sich als legitimer Nutzer aus.\n(OTT wird auf der SD-Karte gespeichert und ist 1 jahr gültig)\n\nAttack Vector :  Angreifer installiert Malware oder hat physischen Zugriff, liest OTT vom SD-Storage aus und verwendet es in seiner eigenen App/Session.\n\nCAPEC-151: attacker impersonating a legitimate identity by stealing or forging authentication credentials.\n\nMitre Tactic: TA0006 – Credential Access: The attacker attempts to obtain or misuse authentication information such as passwords, tokens, or keys.\n\nD: 7 / R: 8 / E: 9 / A: 8 → DREA: 32",
+                  "mitigation": "Secure Storage (KeyStore, Hardware-backed)\n\nD3FEND:\nD3-HSA – Hardware-Backed Storage Assurance (erschwert Credential-Diebstahl)\n\nASVS:\nASVS 2.1.1 / 2.1.2 – Sensitive data must be encrypted at rest\n\nMASVS:\nMASVS-L2 MSTG-PLATFORM-4 – Use secure key storage (hardware-backed)\n\nD: 3 / R: 4 / E: 2 / A: 6 → New DREA: 15",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 103,
-                  "score": ""
+                  "score": "15"
                 }
               ],
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "isWebApplication": null,
               "handlesCardPayment": null,
               "handlesGoodsOrServices": null,
               "threatFrequency": {
-                "spoofing": 1,
+                "spoofing": 5,
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
@@ -303,8 +303,8 @@
                 "text": "2-Faktor-Authe\nntifizierungsdi\nenst"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -405,18 +405,18 @@
                 {
                   "id": "decd5507-dd1e-4953-8bbc-66ce904e58dd",
                   "title": "DoS",
-                  "status": "Open",
-                  "severity": "TBD",
+                  "status": "Mitigated",
+                  "severity": "Medium",
                   "type": "Denial of service",
-                  "description": "Bedrohung: Der 2-Faktor-Authentifizierungsdienst fällt komplett aus\n\nAttack Vector:\nAngreifer schickt große Menge Fake-Anfragen und legitime Authentifizierungen werden blockiert.\n\nCAPEC-125: An attacker sends excessive or malformed requests to the target\n\nMitre tactic: TA0040 – Impact: The goal is to disrupt system availability or integrity, causing operational damage.\n",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "description": "Bedrohung: Der 2-Faktor-Authentifizierungsdienst fällt komplett aus\n\nAttack Vector:\nAngreifer schickt große Menge Fake-Anfragen und legitime Authentifizierungen werden blockiert.\n\nCAPEC-125: An attacker sends excessive or malformed requests to the target\n\nMitre tactic: TA0040 – Impact: The goal is to disrupt system availability or integrity, causing operational damage.\n\nD: 8 / R: 9 / E: 8 / A: 10 → DREA: 35",
+                  "mitigation": "Rate Limiting / CAPTCHA\nLoad Balancer + WAF\n\nD3FEND:\nD3-RL – Request Limiting\n\nASVS:\nASVS 1.3.1 – Protection against resource exhaustion\n\nMASVS:\nMASVS-RESILIENCE MSTG-RESILIENCE-1 – App must handle service unavailability securely\n\nD: 4 / R: 9 / E: 4 / A: 10 → New DREA: 27",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 106,
-                  "score": ""
+                  "score": "27"
                 }
               ],
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "isBidirectional": false,
               "protocol": "",
               "isEncrypted": false,
@@ -429,7 +429,7 @@
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
-                "denialOfService": 1,
+                "denialOfService": 3,
                 "elevationOfPrivilege": 0
               }
             }
@@ -448,8 +448,8 @@
                 "text": "Telefonnummer-\nAPI-Gateway"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -550,26 +550,29 @@
                 {
                   "id": "0ad84ef4-01b6-4038-ba67-4b90646712a3",
                   "title": "Elevation of privilege",
-                  "status": "Open",
-                  "severity": "TBD",
+                  "status": "Mitigated",
+                  "severity": "High",
                   "type": "Elevation of privilege",
-                  "description": "Angreifer missbraucht statischen Gateway-Key\n\nAttack Vector:\nAngreifer exfiltriert den unverschlüsselten statischen Key aus Server-Config danach kann er API-Requests als privilegierter Dienst ausführen.\n\nCAPEC-233: The attacker increases their access rights beyond their authorized level\n\nMitre tactic: TA0004 – Privilege Escalation: An attacker extracts or discovers a static, unprotected key and uses it to perform privileged actions or impersonate trusted components.\n",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "description": "Angreifer missbraucht statischen Gateway-Key\n\nAttack Vector:\nAngreifer exfiltriert den unverschlüsselten statischen Key aus Server-Config danach kann er API-Requests als privilegierter Dienst ausführen.\n\nCAPEC-233: The attacker increases their access rights beyond their authorized level\n\nMitre tactic: TA0004 – Privilege Escalation: An attacker extracts or discovers a static, unprotected key and uses it to perform privileged actions or impersonate trusted components.\n\nD: 10 / R: 9 / E: 9 / A: 9 → DREA: 37",
+                  "mitigation": "Secrets in Vaults / KMS speichern (secure storage systems for sensitive data)\n\nD3FEND:\nD3-SSM – Secrets Storage Management\n\nASVS:\nASVS 2.1.1 / 2.1.4 – Strong secrets management\n\nMASVS:\nMASVS-L2 MSTG-STORAGE-3 – Secure handling of secrets\n\nD: 7 / R: 8 / E: 4 / A: 9 → New DREA: 31",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 110,
                   "score": ""
                 }
               ],
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "threatFrequency": {
                 "spoofing": 0,
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
                 "denialOfService": 0,
-                "elevationOfPrivilege": 1
-              }
+                "elevationOfPrivilege": 3
+              },
+              "handlesCardPayment": null,
+              "handlesGoodsOrServices": null,
+              "isWebApplication": null
             }
           },
           {
@@ -1051,8 +1054,7 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
                 "targetMarker": {
                   "name": "block"
                 },
@@ -1073,7 +1075,7 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
@@ -1082,20 +1084,20 @@
                 {
                   "id": "c3fedfab-b667-46b0-8927-f4e69a60fe75",
                   "title": "Information Disclosure",
-                  "status": "Open",
-                  "severity": "TBD",
+                  "status": "Mitigated",
+                  "severity": "Medium",
                   "type": "Information disclosure",
-                  "description": "Bedrohung: Angreifer kann Symmetrisch Schlüssel oder Telefonnummer auslesen\n\nAttack Vector:\nExterner Telco-Dienst ohne Verschlüsselung -> Angreifer hört Netzwerktraffic ab und liest symmetrischen Key, Telefonnummer oder Routingdaten im Klartext aus.\n\nCAPEC-37: The attacker passively monitors unencrypted network traffic .\n\nMitre Tactic: TA0009 Collection: The attacker gathers data from compromised systems or networks for later misuse or exfiltration.\n",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "description": "Bedrohung: Angreifer kann Symmetrisch Schlüssel oder Telefonnummer auslesen\n\nAttack Vector:\nExterner Telco-Dienst ohne Verschlüsselung -> Angreifer hört Netzwerktraffic ab und liest symmetrischen Key, Telefonnummer oder Routingdaten im Klartext aus.\n\nCAPEC-37: The attacker passively monitors unencrypted network traffic .\n\nMitre Tactic: TA0009 Collection: The attacker gathers data from compromised systems or networks for later misuse or exfiltration.\n\nD: 9 / R: 10 / E: 8 / A: 10 → DREA: 37",
+                  "mitigation": "Ende-zu-Ende Verschlüsselung + Session Keys statt statische Schlüssel\n\nD3FEND:\nD3-ECC – Encrypted Channel Communication\n\nASVS:\nASVS 9.1.1 – Enforce TLS for all data flows\n\nMASVS:\nMASVS-L2 MSTG-NETWORK-1 – Sensitive data must be encrypted on the network\n\nD: 5 / R: 9 / E: 4 / A: 10 → New DREA: 28",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 107,
-                  "score": ""
+                  "score": "28"
                 }
               ],
               "threatFrequency": {
                 "tampering": 0,
-                "informationDisclosure": 1,
+                "informationDisclosure": 4,
                 "denialOfService": 0
               }
             },
@@ -2275,8 +2277,8 @@
                 "text": "AllSecure OTT\nService"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -2373,7 +2375,7 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
@@ -2382,20 +2384,20 @@
                 {
                   "id": "fe8bc833-5c9a-4aea-a644-64c565ebdfc4",
                   "title": "Tampering",
-                  "status": "Open",
-                  "severity": "TBD",
+                  "status": "Mitigated",
+                  "severity": "Medium",
                   "type": "Tampering",
-                  "description": "OTT wird auf dem Weg zwischen 2-Faktor-Dienst und App manipuliert\n\nAttack Vector :\n Angreifer führt Man-in-the-Middle (MITM) zwischen 2FA-Dienst und App aus, da keine oder schwache Transportverschlüsselung. Er kann OTT verändern oder ersetzen.\n\nCAPEC-94: An attacker positions themselves between two communicating parties to intercept\n\nMitre Tactic: TA0001 – Initial Access: Attacker intercepts/modifies the connection to inject tampered data, gaining initial foot",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "description": "OTT wird auf dem Weg zwischen 2-Faktor-Dienst und App manipuliert\n\nAttack Vector :\n Angreifer führt Man-in-the-Middle (MITM) zwischen 2FA-Dienst und App aus, da keine oder schwache Transportverschlüsselung. Er kann OTT verändern oder ersetzen.\n\nCAPEC-94: An attacker positions themselves between two communicating parties to intercept\n\nMitre Tactic: TA0001 – Initial Access: Attacker intercepts/modifies the connection to inject tampered data, gaining initial foot\n\nD: 9 / R: 8 / E: 7 / A: 9 → DREA: 33",
+                  "mitigation": "Strict Certificate Validation\n\nD3FEND:\nD3-CVI – Certificate Integrity Validation\n\nASVS:\nASVS 9.2.x – Client-side certificate validation\n\nMASVS:\nMASVS-L2 MSTG-NETWORK-3 – Resist MITM\n\nD: 5 / R: 7 / E: 3 / A: 9 →New DREA: 24",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 104,
-                  "score": ""
+                  "score": "24"
                 }
               ],
               "threatFrequency": {
                 "spoofing": 0,
-                "tampering": 1,
+                "tampering": 3,
                 "repudiation": 0,
                 "informationDisclosure": 0,
                 "denialOfService": 0,
@@ -2417,8 +2419,8 @@
                 "text": "SIEM"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -2515,7 +2517,7 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
@@ -2524,21 +2526,21 @@
                 {
                   "id": "e83696ce-4b42-48fc-9ff1-cbaadba96e37",
                   "title": "Repeduation",
-                  "status": "Open",
-                  "severity": "TBD",
+                  "status": "Mitigated",
+                  "severity": "Medium",
                   "type": "Repudiation",
-                  "description": "Angreifer verändert und löscht Logs\n(Logs werden monatlich als Excel per E-Mail exportiert (RAW-Daten!)\n\nAttack Vector:\nLogs werden als Excel/RAW-Dateien per E-Mail versendet und sind nicht signiert; Angreifer kann Dateien bearbeiten und löschen, ohne dass dies nachvollzogen wird.\n\nCAPEC-93: An attacker alters or deletes log entries \n\nMitre Tactic: TA0005 – Defense Evasion: The attacker evades detection by removing, modifying, or falsifying forensic evidence.\n\n ",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "description": "Angreifer verändert und löscht Logs\n(Logs werden monatlich als Excel per E-Mail exportiert (RAW-Daten!)\n\nAttack Vector:\nLogs werden als Excel/RAW-Dateien per E-Mail versendet und sind nicht signiert; Angreifer kann Dateien bearbeiten und löschen, ohne dass dies nachvollzogen wird.\n\nCAPEC-93: An attacker alters or deletes log entries \n\nMitre Tactic: TA0005 – Defense Evasion: The attacker evades detection by removing, modifying, or falsifying forensic evidence.\n\n D: 8 / R: 7 / E: 6 / A: 7 → DREA: 28",
+                  "mitigation": "Digitale Signaturen / Hashing der Log-Dateien\n\nD3FEND:\nD3-LOI – Log Integrity\n\nASVS:\nASVS 10.2.1\n – Ensure integrity of logs through secure storage\n\nMASVS:\nMASVS-L2 MSTG-STORAGE-9 – App must not store logs insecurely\n\nD: 4 / R: 7 / E: 3 / A: 6 → New DREA: 20",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 105,
-                  "score": ""
+                  "score": "20"
                 }
               ],
               "threatFrequency": {
                 "spoofing": 0,
                 "tampering": 0,
-                "repudiation": 1,
+                "repudiation": 5,
                 "informationDisclosure": 0,
                 "denialOfService": 0,
                 "elevationOfPrivilege": 0
